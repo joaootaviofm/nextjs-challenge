@@ -1,5 +1,6 @@
+"use client"
 import Image from "next/image"
-import Link from "next/link"
+import { motion } from "motion/react"
 
 export default function Navbar() {
 
@@ -11,7 +12,11 @@ export default function Navbar() {
 
     return (
         <nav className="bg-[#2B2A27] text-white font-bold flex items-center justify-between p-7 drop-shadow-2xl">
-            <div>
+            <motion.div
+                initial={{x: -100, opacity : 0}}
+                animate={{x: 0 , opacity : 1}}
+                transition={{duration : .5}}
+            >
                 <Image
                     src='/logo/logo.webp'
                     width={70}
@@ -19,7 +24,7 @@ export default function Navbar() {
                     alt="Logo"
                     className="hover:scale-110 cursor-pointer transition duration-300"
                 />
-            </div>
+            </motion.div>
             <ul className="flex gap-25">
                 {navList.map((item, index) => (
                     <li

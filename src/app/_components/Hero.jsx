@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image"
+import { motion } from "motion/react"
 
 const projectList = [
-    { projectName: "Password generator"},
+    { projectName: "Password generator" },
     { projectName: "Roman conversor" },
     { projectName: "Elevator system" }
 ]
@@ -19,30 +21,44 @@ function Hero() {
                     alt="me with macbook"
                 />
                 <h1 className="mt-15 text-[#171717] font-bold text-4xl flex flex-col justify-center leading-10">
-                    <span className="hover:scale-110 duration-500 cursor-default">Hey!</span>
-                    <span className="hover:scale-110 duration-500 cursor-default">My name is</span>
-                    <span className="hover:scale-110 duration-500 cursor-default">João</span>
+                    <motion.span
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: .6 }}
+                        className="hover:scale-110 duration-500 cursor-default">Hey!
+                    </motion.span>
+                    <motion.span
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: .6 }}
+                        className="hover:scale-110 duration-500 cursor-default">
+                        My name is
+                    </motion.span>
+                    <motion.span
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: .6 }}
+                        className="hover:scale-110 duration-500 cursor-default">
+                        João
+                    </motion.span>
                 </h1>
             </div>
             <div className="mt-10 flex justify-center items-center">
-                <h1 className="text-white text-4xl font-bold">
+                <h1 className="cursor-default text-center text-white text-4xl font-bold hover:scale-110 duration-500">
                     This project will have three challenges:
                 </h1>
             </div>
             <div className="mt-15 flex flex-col md:flex-row gap-31 items-center justify-center">
                 {projectList.map((challenge, index) => (
-                    <div className="flex justify-center px-15 pt-5 w-[350px] h-[250px] bg-[#2B2A27] rounded-2xl hover:drop-shadow-2xl hover:scale-110 duration-300">
-                        <div key={index}>
-                            <h1 className="font-bold text-xl text-white">
-                                {challenge.projectName}
-                            </h1>
-                            <p>
-                                {index == 0 && (
-                                    "salve"
-                                )}
-                            </p>
-                        </div>
-
+                    <div key={index} className="flex flex-col items-center px-15 pt-5 w-[350px] h-[250px] bg-[#2B2A27] rounded-2xl hover:drop-shadow-2xl hover:scale-110 duration-300">
+                        <h1 className="font-bold text-xl text-white">
+                            {challenge.projectName}
+                        </h1>
+                        <p>
+                            {index == 0 && (
+                                "salve"
+                            )}
+                        </p>
                     </div>
                 ))}
             </div>
