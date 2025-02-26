@@ -13,9 +13,9 @@ export default function Navbar() {
     return (
         <nav className="bg-[#2B2A27] text-white font-bold flex items-center justify-between p-7 drop-shadow-2xl">
             <motion.div
-                initial={{x: -100, opacity : 0}}
-                animate={{x: 0 , opacity : 1}}
-                transition={{duration : .5}}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: .6 }}
             >
                 <Image
                     src='/logo/logo.webp'
@@ -25,19 +25,26 @@ export default function Navbar() {
                     className="hover:scale-110 cursor-pointer transition duration-300"
                 />
             </motion.div>
-            <ul className="flex gap-25">
+            <motion.ul className="flex gap-25">
                 {navList.map((item, index) => (
-                    <li
+                    <motion.li
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: .6 }}
                         className="cursor-pointer border-b-3 text-lg border-transparent hover:border-green-500 duration-300"
                         key={index}>
                         {item.title}
-                    </li>
+                    </motion.li>
                 ))}
-            </ul>
+            </motion.ul>
             <div>
-                <span className="text-lg cursor-pointer border-b-3 border-transparent hover:border-green-500 transition duration-300">
+                <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: .6 }}
+                    className="text-lg cursor-pointer border-b-3 border-transparent hover:border-green-500 transition duration-300">
                     Skills
-                </span>
+                </motion.div>
             </div>
         </nav>
     )
