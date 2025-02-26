@@ -1,11 +1,11 @@
 "use client"
 import Image from "next/image"
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 const projectList = [
-    { projectName: "Password generator", path: "#passowordgen" },
-    { projectName: "Roman conversor", path: "#conversor" },
-    { projectName: "Elevator system", path: "#elevator" }
+    { projectName: "Password generator" },
+    { projectName: "Roman conversor" },
+    { projectName: "Elevator system" }
 ]
 
 function Hero() {
@@ -72,13 +72,11 @@ function Hero() {
                             )}
                         </p>
                         <div className="flex gap-5 mt-10 items-center">
-                            <a href="#"
-                                className="bg-[#D7D7D7] hover:bg-white duration-500 p-2 rounded-2xl font-semibold">
-                                View Code
-                            </a>
-                            <a href="#"
-                                className="bg-[#D7D7D7] hover:bg-white duration-500 p-2 rounded-2xl font-semibold">
-                                Go to Page
+                            <a
+                                href={index == 0 ? "/password" : index == 1 ? "/conversor" : "elevator"}
+                                className="bg-[#D7D7D7] hover:bg-white duration-500 p-2 rounded-2xl font-semibold"
+                            >
+                                Go to page
                             </a>
                         </div>
                     </motion.div>
