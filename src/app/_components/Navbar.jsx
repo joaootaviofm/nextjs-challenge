@@ -25,13 +25,15 @@ export default function Navbar() {
                     className="hover:scale-110 cursor-pointer transition duration-300"
                 />
             </motion.div>
-            <motion.ul className="flex gap-25">
+
+            {/* start of the list*/}
+            <motion.ul className="hidden gap-25 lg:flex">
                 {navList.map((item, index) => (
                     <motion.li
                         initial={{ opacity: 0, y: -100 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: .6 }}
-                        className="cursor-pointer border-b-3 text-lg border-transparent hover:border-green-500 duration-300"
+                        className="cursor-pointer border-b-3 text-lg border-transparent hover:border-white/70 duration-300"
                         key={index}>
                         {item.title}
                     </motion.li>
@@ -39,12 +41,16 @@ export default function Navbar() {
             </motion.ul>
             <div>
                 <motion.div
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: .6 }}
-                    className="text-lg cursor-pointer border-b-3 border-transparent hover:border-green-500 transition duration-300">
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: .6 }}
+                    className="text-lg cursor-pointer border-b-3 border-transparent hover:border-white/70 transition duration-300 hidden lg:flex">
                     Skills
                 </motion.div>
+            </div>
+            {/* end of the list*/}
+            <div className="lg:hidden flex">
+                ---
             </div>
         </nav>
     )

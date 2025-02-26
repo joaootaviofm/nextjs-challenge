@@ -8,7 +8,6 @@ const projectList = [
     { projectName: "Elevator system", path: "#elevator" }
 ]
 
-
 function Hero() {
     return (
         <div>
@@ -49,7 +48,7 @@ function Hero() {
                     This project will have three challenges:
                 </h1>
             </motion.div>
-            <div className="mt-15 flex flex-col md:flex-row gap-31 items-center justify-center">
+            <div className="mt-15 flex flex-col lg:flex-row md:gap-31 gap-10 items-center justify-center">
                 {projectList.map((challenge, index) => (
                     <motion.div
                         initial={{ opacity: 0, x: -100 }}
@@ -60,7 +59,7 @@ function Hero() {
                         <h1 className="font-bold text-xl text-white">
                             {challenge.projectName}
                         </h1>
-                        <p className="text-white mt-2">
+                        <p className="text-white mt-2 cursor-default">
                             {index == 0 && (
                                 "User must have 3 options: Use symbols, Use Numbers, Use Lower or UpperCase only."
                             )}
@@ -74,11 +73,11 @@ function Hero() {
                         </p>
                         <div className="flex gap-5 mt-10 items-center">
                             <a href="#"
-                                className="bg-white p-2 rounded-2xl">
+                                className="bg-[#D7D7D7] hover:bg-white duration-500 p-2 rounded-2xl font-semibold">
                                 View Code
                             </a>
                             <a href="#"
-                                className="bg-white p-2 rounded-2xl">
+                                className="bg-[#D7D7D7] hover:bg-white duration-500 p-2 rounded-2xl font-semibold">
                                 Go to Page
                             </a>
                         </div>
